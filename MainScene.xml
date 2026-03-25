@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene" initialFocus="sideList">
+    <interface>
+        <!-- set by SceneGraph → observed by main.brs to open roHtmlWidget -->
+        <field id="openBrowser"  type="string"  value="" />
+        <!-- set by main.brs → tells SceneGraph browser has closed -->
+        <field id="browserDone"  type="boolean" value="false" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+
+    <children>
+
+        <!-- ── Background ────────────────────────────────────────────────── -->
+        <Rectangle id="bg" color="#0A0A12FF" width="1280" height="720" />
+
+        <!-- ── Header bar ──────────────────────────────────────────────── -->
+        <Rectangle color="#150828FF" width="1280" height="72" translation="[0,0]" />
+        <Label id="headerTitle" text="ROKUWEB" translation="[36,10]"
+               color="#A020F0FF" font="font:LargeBoldSystemFont" />
+        <Label id="headerSub"   text="Loading…"  translation="[36,46]"
+               color="#FFFFFF55" font="font:SmallSystemFont" />
+
+        <!-- Tab indicator chips (top-right) -->
+        <Rectangle id="tabIPTV"    color="#A020F040" width="140" height="36"
+                   translation="[980,18]" />
+        <Label     id="tabIPTVLbl" text="📺  IPTV"  translation="[992,26]"
+                   color="#FFFFFFFF" font="font:SmallBoldSystemFont" />
+
+        <Rectangle id="tabBrowser"    color="#00000000" width="160" height="36"
+                   translation="[1136,18]" />
+        <Label     id="tabBrowserLbl" text="🌐  Browser" translation="[1148,26]"
+                   color="#FFFFFF55"  font="font:SmallBoldSystemFont" />
+
+        <!-- ── Sidebar ──────────────────────────────────────────────────── -->
+        <Rectangle color="#110820FF" width="320" height="648" translation="[0,72]" />
+        <LabelList id="sideList"
+                   translation="[12,84]"
+                   width="296"  height="624"
+                   itemSize="[296,52]" itemSpacing="[0,2]"
+                   visible="true" />
+
+        <!-- Divider -->
+        <Rectangle color="#A020F030" width="2" height="648" translation="[320,72]" />
+
+        <!-- ── Right-panel label ─────────────────────────────────────────── -->
+        <Label id="areaLabel" text="Select a playlist"
+               translation="[344,84]"
+               color="#FFFFFF40" font="font:MediumBoldSystemFont" />
+
+        <!-- ── IPTV: channel list ────────────────────────────────────────── -->
+        <LabelList id="channelList"
+                   translation="[332,112]"
+                   width="936" height="596"
+                   itemSize="[936,52]" itemSpacing="[0,2]"
+                   visible="false" />
+
+        <!-- ── Status / loading label ────────────────────────────────────── -->
+        <Label id="statusLabel" text=""
+               translation="[332,340]" width="936" horizAlign="center"
+               color="#FFFFFFFF" font="font:MediumSystemFont" />
+
+        <!-- ── Browser panel (hidden while in IPTV mode) ─────────────────── -->
+        <!-- Instruction hint -->
+        <Label id="browserHint"
+               text="Select a site or choose  Enter URL…  to type an address"
+               translation="[344,112]" width="900"
+               color="#FFFFFF55" font="font:SmallSystemFont" visible="false" />
+
+        <!-- Shortcut grid -->
+        <LabelList id="browserList"
+                   translation="[332,144]"
+                   width="920" height="544"
+                   itemSize="[920,60]" itemSpacing="[0,4]"
+                   visible="false" />
+
+        <!-- ── Now-playing bar ───────────────────────────────────────────── -->
+        <Rectangle id="npBg"   color="#1A0A2EFF" width="1280" height="36"
+                   translation="[0,684]" visible="false" />
+        <Label     id="npLabel" translation="[36,688]"
+                   color="#A020F0FF" font="font:SmallBoldSystemFont" visible="false" />
+
+        <!-- ── Full-screen video ─────────────────────────────────────────── -->
+        <Video id="videoPlayer" translation="[0,0]" width="1280" height="720"
+               visible="false" />
+
+    </children>
+</component>
