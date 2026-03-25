@@ -1,8 +1,11 @@
 function getPlaylists() as Object
     return [
         {name: "North America IPTV", url: "https://iptv-org.github.io/iptv/regions/noram.m3u"},
-        {name: "World IPTV",         url: "https://iptv-org.github.io/iptv/index.m3u"}
-    ]
+        {name: "World IPTV",         url: "https://iptv-org.github.io/iptv/index.m3u"},
+        {name: "MoveOnJoy",         url: " <------> "},
+        {name: "Samsung Tv",         url: " <------> "},
+        {name: "Pluto Tv",         url: " <------> "}
+     ]
 end function
 
 function getBrowserShortcuts() as Object
