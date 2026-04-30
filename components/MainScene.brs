@@ -2,10 +2,11 @@ function getPlaylists() as Object
     return [
         {name: "North America IPTV", url: "https://iptv-org.github.io/iptv/regions/noram.m3u"},
         {name: "World IPTV",         url: "https://iptv-org.github.io/iptv/index.m3u"},
-        {name: "MoveOnJoy",         url: " <------> "},
-        {name: "Samsung Tv",         url: " <------> "},
-        {name: "Pluto Tv",         url: " <------> "}
-     ]
+        {name: "MoveOnJoy",         url: "http://imediatv666.store:7777/get.php?username=nVjHdz6RX&password=gToY9m0w37&type=m3u_plus"},
+        {name: "Samsung Tv",         url: "http://bedroombullyonline.com:8880/get.php?username=lemonsbaskets@yahoo.com&password=XpUf4N7rke&type=m3u8"},
+        {name: "Pluto Tv",         url: "https://raw.githubusercontent.com/doms9/iptv/refs/heads/default/M3U8/TV.m3u8"}
+        {name: "English",         url: "https://iptv-org.github.io/iptv/languages/eng.m3u"}
+     ]     ]
 end function
 
 function getBrowserShortcuts() as Object
